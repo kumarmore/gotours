@@ -1,0 +1,60 @@
+name: gotour
+description: "A Gotour Travel App"
+
+publish_to: 'none'
+
+version: 1.0.0+1
+
+environment:
+  sdk: ^3.7.2
+
+dependencies:
+  flutter:
+    sdk: flutter
+
+  cupertino_icons: ^1.0.8
+  flutter_svg: ^2.0.17
+  shared_preferences: ^2.5.2
+  dotted_border: ^2.1.0
+  country_picker: ^2.0.27
+  cached_network_image: ^3.4.1
+  table_calendar: ^3.2.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+  flutter_launcher_icons: ^0.14.3
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/images/
+    - assets/logos/
+    - assets/icons/onboardingpage1/
+    - assets/icons/onboardingpage2/
+    - assets/icons/onboardingpage3/
+    - assets/appIcon/
+    - assets/images/chat/
+    - assets/images/profile/
+    - assets/images/chat/chatbox/
+    - assets/icons/
+
+  fonts:
+    - family: Marcellus
+      fonts:
+        - asset: fonts/Marcellus-Regular.ttf
+
+    - family: Gilroy-bold
+      fonts:
+        - asset: fonts/Gilroy-bold.ttf
+
+    - family: Gilroy-Medium
+      fonts:
+        - asset: fonts/Gilroy-Medium.ttf
+
+flutter_launcher_icons:
+  android: "ic_launcher"
+  ios: true
+  image_path: "assets/appIcon/appicon.png"
