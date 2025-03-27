@@ -28,7 +28,6 @@ class PaymentMethodScreen extends StatelessWidget {
                   const CustomText(
                     text: 'Payment Method',
                     size: 24,
-                    weight: FontWeight.bold,
                     fontFamily: 'Marcellus',
                   ),
                 ],
@@ -41,7 +40,6 @@ class PaymentMethodScreen extends StatelessWidget {
                 height: 200,
                 decoration: BoxDecoration(
                   borderRadius: BorderRadius.circular(12),
-
                 ),
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(60),
@@ -73,22 +71,6 @@ class PaymentMethodScreen extends StatelessWidget {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        const CustomText(
-                          text: 'Monthly transfer limit',
-                          size: 16,
-                          weight: FontWeight.bold,
-                        ),
-                        const SizedBox(height: 8),
-                        const CustomText(
-                          text: '\$120,000 / \$600,000',
-                          size: 14,
-                          color: Colors.grey,
-                        ),
-                      ],
-                    ),
                     Stack(
                       alignment: Alignment.center,
                       children: [
@@ -96,16 +78,41 @@ class PaymentMethodScreen extends StatelessWidget {
                           width: 60,
                           height: 60,
                           child: CircularProgressIndicator(
-                            value: 0.2,
+                            value: 0.7,
+                            // 70%
                             strokeWidth: 8,
                             backgroundColor: Colors.grey[200],
-                            valueColor: const AlwaysStoppedAnimation<Color>(Colors.orange),
+                            // Light grey background
+                            valueColor: const AlwaysStoppedAnimation<Color>(
+                              Color(0xffFF7D0D),
+                            ), // Orange progress
                           ),
                         ),
                         const CustomText(
-                          text: '20%',
+                          text: '70%',
                           size: 14,
                           weight: FontWeight.bold,
+                          fontFamily: 'Gilroy-Bold',
+                        ),
+                      ],
+                    ),
+                    Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        const CustomText(
+                          text: 'Monthly transfer limit',
+                          size: 13,
+                          weight: FontWeight.bold,
+                          fontFamily: 'Gilroy-Bold',
+                        ),
+                        const SizedBox(height: 4),
+                        // Reduced spacing to match the image
+                        const CustomText(
+                          text: '\$12,000 of 25,000',
+                          // Updated to match the image
+                          size: 11,
+                          color: Colors.orange,
+                          fontFamily: 'Gilroy-medium',
                         ),
                       ],
                     ),
@@ -119,13 +126,15 @@ class PaymentMethodScreen extends StatelessWidget {
                 text: 'History',
                 size: 18,
                 weight: FontWeight.bold,
+                fontFamily: 'Gilroy-Bold',
+
               ),
               const SizedBox(height: 12),
               const TransactionItem(
                 imagePath: 'assets/images/portugal.png',
                 title: 'Winter in Portugal',
                 subtitle: 'Lisbon',
-                amount: 500,
+                amount: 3000,
               ),
               const SizedBox(height: 12),
               const TransactionItem(
@@ -139,7 +148,7 @@ class PaymentMethodScreen extends StatelessWidget {
                 imagePath: 'assets/images/japan.png',
                 title: 'Japan Most Unique Country',
                 subtitle: 'Sesimbra, Lisbon',
-                amount: 500,
+                amount: 3000,
               ),
               const SizedBox(height: 20),
             ],

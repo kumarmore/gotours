@@ -38,8 +38,8 @@ class TransactionItem extends StatelessWidget {
             borderRadius: BorderRadius.circular(8),
             child: Image.asset(
               imagePath,
-              width: 60,
-              height: 60,
+              width: 70,
+              height: 70,
               fit: BoxFit.cover,
             ),
           ),
@@ -53,13 +53,26 @@ class TransactionItem extends StatelessWidget {
                   text: title,
                   size: 16,
                   weight: FontWeight.bold,
+                  fontFamily: 'Gilroy-Bold',
+
                 ),
                 const SizedBox(height: 4),
-                CustomText(
-                  text: subtitle,
-                  size: 14,
-                  color: Colors.grey,
-                ),
+                Row(
+                  children: [
+                    Icon(
+                      Icons.location_on, // Location icon
+                      size: 16,          // Adjust the size to match the text
+                      color: Colors.grey, // Match the text color
+                    ),
+                    const SizedBox(width: 4), // Add spacing between the icon and text
+                    CustomText(
+                      text: subtitle,
+                      size: 13,
+                      color: Colors.orange,
+                    ),
+                  ],
+                )
+
               ],
             ),
           ),
@@ -68,7 +81,7 @@ class TransactionItem extends StatelessWidget {
             text: amount >= 0 ? '+\$${amount.toInt()}' : '-\$${amount.abs().toInt()}',
             size: 16,
             weight: FontWeight.bold,
-            color: amount >= 0 ? Colors.green : Colors.red,
+            color: amount >= 0 ? Colors.green : Colors.orange,
           ),
         ],
       ),
